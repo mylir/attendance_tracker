@@ -1,0 +1,21 @@
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<ul>
+  <li>
+    <span>email: </span>
+    <span><%= @user.email %></span>
+  </li>
+  <li>
+    <span>phone: </span>
+    <span><%= @user.phone %></span>
+  </li>
+  <li>
+    <span>city: </span>
+    <span><%= @user.city %></span>
+  </li>
+  <li>
+    <span>town: </span>
+    <span><%= @user.town %></span>
+  </li>
+</ul>
+<%= link_to 'Back', :back %>
+<%= link_to 'Users', users_path 

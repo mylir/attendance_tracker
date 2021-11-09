@@ -1,7 +1,16 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-    if Rails.env.development?
+
+  
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+
+  resources :companies
+  resources :users
+
+  if Rails.env.development?
     mount Sidekiq::Web => '/sidekiq'
   else
     authenticate :user, lambda { |u| u.admin? } do

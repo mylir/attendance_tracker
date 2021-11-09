@@ -1,0 +1,63 @@
+<%= form_with model: user do |form|%>
+  <div>
+    <%= form.label :first_name, 'First Name' %>
+    <%= form.text_field :first_name %>
+    <% if user.errors[:first_name] %>
+      <span style='color: red'><%= user.errors[:first_name][0] %></span>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :last_name, 'Last Name' %>
+    <%= form.text_field :last_name %>
+  </div>
+  <% if user.errors[:last_name] %>
+    <span style='color: red'><%= user.errors[:last_name][0] %></span>
+  <% end %>
+  <div>
+    <%= form.label :email, 'Email' %>
+    <%= form.text_field :email %>
+  </div>
+  <% if user.errors[:email] %>
+    <span style='color: red'><%= user.errors[:email][0] %></span>
+  <% end %>
+  <div>
+    <%= form.label :phone, 'Phone' %>
+    <%= form.text_field :phone %>
+  </div>
+  <% if user.errors[:phone] %>
+    <span style='color: red'><%= user.errors[:phone][0] %></span>
+  <% end %>
+  <div>
+    <%= form.label :city, 'City' %>
+    <%= form.text_field :city %>
+  </div>
+  <% if user.errors[:city] %>
+    <span style='color: red'><%= user.errors[:city][0] %></span>
+  <% end %>
+  <div>
+    <%= form.label :town, 'Town' %>
+    <%= form.text_field :town %>
+  </div>
+  <% if user.errors[:town] %>
+    <span style='color: red'><%= user.errors[:town][0] %></span>
+  <% end %>
+  <div>
+    <%= form.label :password, 'Password' %>
+    <%= form.password_field :password %>
+  </div>
+  <% if user.errors[:password] %>
+    <span style='color: red'><%= user.errors[:password][0] %></span>
+  <% end %>
+  <div>
+    <%= form.label :password_confirmation, 'Password Confirmation' %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+  <% if user.errors[:password_confirmation] %>
+    <span style='color: red'><%= user.errors[:password_confirmation][0] %></span>
+  <% end %>
+  <% if user.persisted? %>
+    <%= form.submit 'Update user' %>
+  <% else %>
+    <%= form.submit 'Create account' %>
+  <% end %>
+<% end %>

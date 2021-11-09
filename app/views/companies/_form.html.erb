@@ -1,0 +1,12 @@
+<%= form_with model: company do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+  </div>  
+  <%= form.submit 'register company' %>
+<% end %>
